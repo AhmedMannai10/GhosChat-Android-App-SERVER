@@ -80,7 +80,7 @@ public class Login extends AppCompatActivity {
             return true;
         }else{
             Toast.makeText(this.getBaseContext(),
-                    "False",
+                    "Please Verify Your Information",
                     Toast.LENGTH_SHORT
             ).show();
 

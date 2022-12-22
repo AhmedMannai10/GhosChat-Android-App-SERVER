@@ -41,8 +41,10 @@ public class SignUp extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 
-                System.out.println(signUp(name, email, password));
-
+                if(signUp(name, email, password)){
+                    intent.putExtra("user", new User(name, email, password));
+                    startActivity(intent);
+                }
             }
         });
 
@@ -68,7 +70,7 @@ public class SignUp extends AppCompatActivity {
             return true;
         } else {
             Toast.makeText(this.getBaseContext(),
-                    "False",
+                    "User already exist with that email",
                     Toast.LENGTH_SHORT
             ).show();
             return false;

@@ -24,6 +24,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
 
         editEmail = findViewById(R.id.edit_email);
         editPassword = findViewById(R.id.edit_password);
@@ -53,6 +54,9 @@ public class Login extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 
                 if(login(email, password)){
+                    User user = new User(email.split("@", 2)[0], email, password);
+                    System.out.println(user);
+                    intent.putExtra("user", user);
                     startActivity(intent);
                 }
             }

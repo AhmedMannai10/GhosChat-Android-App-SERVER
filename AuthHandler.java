@@ -61,6 +61,7 @@ public class AuthHandler implements Runnable , Serializable {
     }
 
 
+
     public class ResponseFromServer implements Runnable {
         private volatile boolean response;
         public void run(){
@@ -77,7 +78,6 @@ public class AuthHandler implements Runnable , Serializable {
         public boolean getResponse(){
             return this.response;
         }
-
     }
 
 
